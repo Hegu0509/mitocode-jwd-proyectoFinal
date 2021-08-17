@@ -1,0 +1,42 @@
+<div class="card">
+    <div class="header">
+        <h4 class="title">Edit Product</h4>
+        <p class="category">fill out & click save</p>
+    </div>
+
+    <div class="content">
+        <form th:object="${producto}" th:action="@{/producto/{id}(id=${producto.id})}" th:method="post">
+            <div class="form-group">
+                <input type="hidden" class="form-control" th:field="*{id}"/>
+            </div>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" th:field="*{nombreProducto}">
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea rows="4" type="textarea" class="form-control" id="description" th:field="*{descripcionProducto}"/></textarea>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity</label>
+                <input type="text" class="form-control" id="quantity" th:field="*{cantidadProducto}"/>
+            </div>
+            <div class="form-group">
+                <label for="category">Category</label>
+                <select id="category" class="form-control" th:field="*{categoria}" multiple="multiple">
+                    <option th:each="category : ${categorias}"
+                            th:text="${category.nombreCategoria}"
+                            th:value="${category.id}"
+                            th:selected="${producto.categoria.contains(category)}"></option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="text" class="form-control" id="price" th:field="*{precioProducto}"/>
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+            <a th:href="@{'/productos'}" class="btn btn-default">Cancel</a>
+        </form>
+
+    </div>
+</div>

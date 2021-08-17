@@ -1,0 +1,42 @@
+<div class="sidebar" data-background-color="white" data-active-color="danger">
+
+    <!--
+        Tip 1: you can change the color of the sidebar's background using: data-background-color="white | black"
+        Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
+    -->
+
+    <div class="sidebar-wrapper">
+        <div class="logo">
+            <a th:href="@{/productos}" class="simple-text">
+                Products Manager
+            </a>
+        </div>
+
+        <ul class="nav">
+            <li>
+                <a th:href="@{/productos}">
+                    <i class="ti-book"></i>
+                    <p>Products</p>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/product/create}">
+                    <i class="ti-plus"></i>
+                    <p>Add Product</p>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/categorias}">
+                    <i class="ti-folder"></i>
+                    <p>Categories</p>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/categoria/create}">
+                    <i class="ti-plus"></i>
+                    <p>Add Category</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

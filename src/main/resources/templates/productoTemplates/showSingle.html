@@ -1,0 +1,14 @@
+<div class="card">
+	<div class="header">
+		<h4 th:text="${producto.nombreProducto}" class="title">Edit
+			Product</h4>
+		<p class="category">Details</p>
+	</div>
+
+	<div class="content">
+		<p th:text="${producto.cantidadProducto}"></p>
+		<p th:text="${producto.precioProducto}"></p>
+		<p th:text="${producto.descripcionProducto}"></p>
+		<p th:text="${producto.categoria.nombreCategoria}"></p>
+	</div>
+</div>
